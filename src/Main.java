@@ -16,22 +16,16 @@ class Main
 
 
     public static boolean checkAuthentiffication(String login, String password, String confirmPassword) {
-        boolean check1 = false;
-        boolean check2 = false;
         if (login.length() > 20 || !p.matcher(login).find()){
             throw new CheckLogException();
-        } else {
-            check1 = true;
         }
         if (password.length() > 20 || !p.matcher(password).find()) {
             throw new CheckPasException();
-        } else {
-            check2 = true;
         }
         if (!password.equals(confirmPassword)){
             throw new CheckPasEqualsException();
         }
-        return check1&&check2;
+        return true;
     }
     public static void main(String[] args)
     {
